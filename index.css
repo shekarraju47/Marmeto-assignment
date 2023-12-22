@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.topCont {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.topMainHeading {
+  text-align: center;
+  color: #000;
+  font-family: roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.icons {
+  width: 15px;
+  height: 15x;
+}
+
+.itemImg {
+  width: 175px;
+  height: 175px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+  height: 100%;
+  width: 40%;
+}
+
+.badgePara {
+  align-self: flex-start;
+  background-color: #ccff78;
+  border-radius: 0px 10px 10px 10px;
+  text-align: center;
+  padding: 5px;
+  flex-shrink: 0;
+  @media screen and (min-width: 677px) {
+    align-self: flex-end;
+    border-radius: 10px 0px 0px 10px;
+    background: #ccff78;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.listContainer {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 677px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+}
+
+.listItem {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #f3f5f5;
+  margin: 10px;
+  @media screen and (min-width: 677px) {
+    width: 400px;
+  }
+}
+
+.rightCardCont {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.varientPara {
+  padding: 10px;
+  width: 370px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.productTitle {
+  color: #000;
+  font-family: roboto;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #000000;
+}
+
+.varientPara {
+  margin: 10px;
+  width: 215px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+}
