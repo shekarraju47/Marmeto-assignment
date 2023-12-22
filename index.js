@@ -6,11 +6,11 @@ let listIconsEl = document.getElementById("listIcons");
 // comment
 
 gridIconsEl.addEventListener("click", () => {
-  ListMainEl.classList.add("listContainer");
+  ListMainEl.classList.add("listView");
 });
 
 listIconsEl.addEventListener("click", (e) => {
-  ListMainEl.classList.remove("listContainer");
+  ListMainEl.classList.remove("listView");
 });
 
 const api = "https://mocki.io/v1/0934df88-6bf7-41fd-9e59-4fb7b8758093";
@@ -21,7 +21,7 @@ const options = {
 const CreateList = (data) => {
   const createLi = document.createElement("li");
   createLi.classList = "listItem";
-  ListMainEl.classList = "listContainer";
+  ListMainEl.classList = "listContainer listView";
   ListMainEl.appendChild(createLi);
 
   const imgAndBadgCont = document.createElement("div");
