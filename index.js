@@ -4,7 +4,6 @@ let gridIconsEl = document.getElementById("gridIcons");
 let listIconsEl = document.getElementById("listIcons");
 
 gridIconsEl.addEventListener("click", () => {
-  console.log("clickesF");
   ListMainEl.classList.add("listContainer");
 });
 
@@ -12,7 +11,6 @@ listIconsEl.addEventListener("click", (e) => {
   ListMainEl.classList.remove("listContainer");
 });
 
-// console.log(data);
 const api = "https://mocki.io/v1/0934df88-6bf7-41fd-9e59-4fb7b8758093";
 const options = {
   method: "get",
@@ -34,7 +32,10 @@ const CreateList = (data) => {
   imgAndBadgCont.appendChild(producBadge);
 
   const productImg = document.createElement("img");
-  productImg.src = data.product_image;
+  productImg.classList = "img";
+  productImg.src = data.product_image
+    ? "https://i2.wp.com/asvs.in/wp-content/uploads/2017/08/dummy.png?zoom=1.5&fit=399%2C275&ssl=1"
+    : data.product_image;
   productImg.alt = "Img";
   imgAndBadgCont.appendChild(productImg);
 
@@ -62,33 +63,34 @@ const CreateList = (data) => {
       v3.textContent = i.v3;
       detailsProduct.appendChild(v3);
     }
-
-    // const v2 = document.createElement("p");
-    // v2.classList = "varientPara";
-    // v2.textContent = !i.v1 && i.v3 ? i.v2 : "";
-    // detailsProduct.appendChild(v2);
-    // const v3 = document.createElement("p");
-    // v3.classList = "varientPara";
-    // v3.textContent = i.v3;
-    // detailsProduct.appendChild(v3);
   }
 };
 
-const getAllData = (jsonData) => {
-  for (let i of jsonData.data) {
-    const re = i.product_title.includes(inputSearchEl.value);
+let search = "";
+function getvalue(e) {
+  search = inputSearchEl.value;
+  DataFun(search);
+}
 
+const getAllData = (filter) => {
+  for (let i of filter) {
     CreateList(i);
   }
 };
 
-fetch(api, options)
-  .then((res) => {
-    return res.json();
-  })
-  .then((jsonData) => {
-    getAllData(jsonData);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+const DataFun = (search) => {
+  fetch(api, options)
+    .then((res) => {
+      return res.json();
+    })
+    .then((jsonData) => {
+      let filter = jsonData.data.filter((item) =>
+        item.product_title.toLowerCase().includes(search)
+      );
+      getAllData(filter);
+    })
+    .catch((e) => {
+      console.error(e);
+    });
+};
+DataFun(search);
