@@ -89,6 +89,7 @@ const DataFun = (search) => {
       let filter = jsonData.data.filter((item) =>
         item.product_title.toLowerCase().includes(search)
       );
+      console.log(filter);
       getAllData(filter);
     })
     .catch((e) => {
