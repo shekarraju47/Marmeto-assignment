@@ -37,16 +37,13 @@
 }
 
 .itemImg {
-  width: 175px;
-  height: 175px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-  height: 100%;
-  width: 40%;
+  width: 50%;
 }
 
 .badgePara {
@@ -92,6 +89,9 @@
   }
 }
 
+.img {
+  width: 100%;
+}
 .rightCardCont {
   margin: 5px;
   display: flex;
