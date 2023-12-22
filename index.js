@@ -3,6 +3,8 @@ let inputSearchEl = document.getElementById("inputSearch");
 let gridIconsEl = document.getElementById("gridIcons");
 let listIconsEl = document.getElementById("listIcons");
 
+// comment
+
 gridIconsEl.addEventListener("click", () => {
   ListMainEl.classList.add("listContainer");
 });
