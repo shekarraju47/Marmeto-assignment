@@ -44,6 +44,9 @@
   border-radius: 5px;
   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
   width: 50%;
+  @media screen and (min-width: 677px) {
+    width: 100%;
+  }
 }
 
 .badgePara {
@@ -67,13 +70,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 677px) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
-  }
+}
+
+.listView {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .listItem {
@@ -86,6 +90,9 @@
   margin: 10px;
   @media screen and (min-width: 677px) {
     width: 400px;
+    background: #f9f9f9;
+    flex-direction: column;
+    height: 100%;
   }
 }
 
